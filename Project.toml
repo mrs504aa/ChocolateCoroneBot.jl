@@ -1,0 +1,10 @@
+name = "ChocolateCoroneBot"
+uuid = "06bddf2a-6f3c-4a18-9f83-e36cca5ee685"
+authors = ["Ruosong Mao <mrs504aa@hotmail.com>"]
+version = "0.1.0"
+
+[deps]
+Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
+JSON3 = "0f8b85d8-7281-11e9-16c2-39a750bddbf1"
+OpenAI = "e9f21f70-7185-4079-aca2-91159181367c"
+Telegram = "1da6f4ae-116c-4c38-8ee9-19974ff3601d"
