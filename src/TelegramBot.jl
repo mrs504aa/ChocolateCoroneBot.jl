@@ -4,9 +4,12 @@ function TelegramChatMainFunction()
     LogFileName = "BotLog_$(Dates.format(now(), "yyyy-mm-dd_HH-MM-SS")).txt"
 
     S = getUpdates(BotChat)
+    S == [] ? S = [""] : () 
     while true
+        sleep(1.0)
         SN = getUpdates(BotChat)
-        if SN[end] != S[end]
+        SN == [] ? SN = [""] : () 
+        if (SN[end] != S[end])
             S = SN
             InputMessage = SN[end]["message"]["text"]
 
@@ -29,7 +32,6 @@ function TelegramChatMainFunction()
 
             sendMessage(BotChat; text = OutputMessage)
         end
-        sleep(1.0)
     end
 
     return nothing
