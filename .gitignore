@@ -2,3 +2,4 @@
 /src/PersonalSettings.jl
 Test.jl
 *.txt
+Manifest.toml
