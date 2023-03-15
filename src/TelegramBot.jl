@@ -13,6 +13,7 @@ function TelegramChatMainFunction(; LogFileName::String = "")
         SN == [] ? SN = [""] : ()
         if (SN[end] != S[end])
             S = SN
+            haskey("message", SN[end]) ? () : (continue)
             InputMessage = SN[end]["message"]["text"]
 
             open(LogFileName, "a") do io
