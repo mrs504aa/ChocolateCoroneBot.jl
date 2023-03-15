@@ -15,8 +15,6 @@ function TelegramChatMainFunction(; LogFileName::String = "")
             S = SN
             InputMessage = SN[end]["message"]["text"]
 
-            println("recive message:")
-            println(InputMessage)
             open(LogFileName, "a") do io
                 println(io, "recive message:")
                 println(io, InputMessage)
@@ -25,8 +23,6 @@ function TelegramChatMainFunction(; LogFileName::String = "")
             Response = create_chat(OpenAIToken, "gpt-3.5-turbo", [Dict("role" => "user", "content" => InputMessage)])
             OutputMessage = Response.response["choices"][begin]["message"]["content"]
 
-            println("send message:")
-            println(OutputMessage)
             open(LogFileName, "a") do io
                 println(io, "send message:")
                 println(io, OutputMessage)
