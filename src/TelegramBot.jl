@@ -1,14 +1,16 @@
-function TelegramChatMainFunction()
+function TelegramChatMainFunction(; LogFileName::String = "")
     BotChat = TelegramClient(TelegramToken; chat_id = TelegramChatID)
 
-    LogFileName = "BotLog_$(Dates.format(now(), "yyyy-mm-dd_HH-MM-SS")).txt"
+    if LogFileName == ""
+        LogFileName = "BotLog_$(Dates.format(now(), "yyyy-mm-dd_HH-MM-SS")).txt"
+    end
 
     S = getUpdates(BotChat)
-    S == [] ? S = [""] : () 
+    S == [] ? S = [""] : ()
     while true
         sleep(1.0)
         SN = getUpdates(BotChat)
-        SN == [] ? SN = [""] : () 
+        SN == [] ? SN = [""] : ()
         if (SN[end] != S[end])
             S = SN
             InputMessage = SN[end]["message"]["text"]
@@ -27,7 +29,7 @@ function TelegramChatMainFunction()
             println(OutputMessage)
             open(LogFileName, "a") do io
                 println(io, "send message:")
-                println(io ,OutputMessage)
+                println(io, OutputMessage)
             end
 
             sendMessage(BotChat; text = OutputMessage)
