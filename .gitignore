@@ -3,3 +3,4 @@
 Test.jl
 *.txt
 Manifest.toml
+.env

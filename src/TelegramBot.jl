@@ -9,7 +9,7 @@ function TelegramChatMainFunction(; LogFileName::String = "")
     S == [] ? S = [""] : ()
     while true
         sleep(1.0)
-        SN = getUpdates(BotChat)
+        SN = getUpdates(BotChat, offset = -1)
         SN == [] ? SN = [""] : ()
         if (SN[end] != S[end])
             S = SN

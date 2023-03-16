@@ -4,6 +4,7 @@ authors = ["Ruosong Mao <mrs504aa@hotmail.com>"]
 version = "0.1.0"
 
 [deps]
+ConfigEnv = "01234589-554d-41b7-ae5c-7b6ee2db6796"
 Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
 Downloads = "f43a241f-c20a-4ad4-852c-f6b1247861c6"
 JSON3 = "0f8b85d8-7281-11e9-16c2-39a750bddbf1"
