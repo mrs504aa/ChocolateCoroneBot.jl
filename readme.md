@@ -7,4 +7,4 @@ TG_CHAT_ID =
 OPENAI_TOKEN = 
 ```
 
-Run the script ```Main.jl```.
+Run the script '''main.jl'''.
